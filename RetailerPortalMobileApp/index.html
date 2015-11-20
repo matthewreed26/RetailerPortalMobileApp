@@ -85,45 +85,82 @@
         <div data-role="header">
             <h1>My Stores</h1>
         </div>
-        <div data-role="main" class="ui-content">
-            <div data-role="collapsibleset" id="storeList">
-                <div data-role="collapsible">
-                    <h3>Matt's Fresh FOOOOOOOOOD Market</h3>
-                    <p>YUM! YUM!</p>
-                </div>
-                <div data-role="collapsible">
-                    <h3>Jeff's Daily Cafe</h3>
-                    <p>Coffee, Tea, and FNS for all!</p>
-                </div>
-                <div data-role="collapsible">
-                    <h3>Priti's WonderMart</h3>
-                    <p>Get all of your cooking ingredients here!</p>
-                </div>
-            </div>
-        </div>
-        <button id="addNewStoreBtn">Apply Here for a New Store!</button>
+        <ui data-role="listview">
+            <li><a href="#storeInfoPage">Jeff's Daily Cafe</a></li>
+            <li><a href="#">Priti's WonderMart</a></li>
+            <li><a href="#">Praveen's Fresh Food</a></li>
+        </ui>
+        <button>Apply Here for a New Store!</button>
     </div>
     <div data-role="page" id="storeInfoPage">
+        <div data-role="panel" id="sidePanel" data-display="push">
+            <button data-icon="comment">Contact History</button>
+            <a href="#documentationPage"><button data-icon="cloud">Documentation</button></a>
+        </div>
         <div data-role="header">
-            <h1>My Stores</h1>
+            <h1>Jeff's Daily Cafe</h1>
+            <a href="#sidePanel">More</a>
         </div>
         <div data-role="main" class="ui-content">
+            <h2>FNS Number: 1234567</h2>
             <div data-role="collapsibleset" id="storeList">
                 <div data-role="collapsible">
-                    <h3>Matt's Fresh FOOOOOOOOOD Market</h3>
-                    <p>YUM! YUM!</p>
+                    <h3>Store Information</h3>
+                    <p>
+                        </br>1881 Campus Commons Dr.<br/>Reston, VA 20191<br/>Status: <font color="blue"><b>Application Processing</b></font>
+                        <button>Update Store Information</button></p>
                 </div>
                 <div data-role="collapsible">
-                    <h3>Jeff's Daily Cafe</h3>
-                    <p>Coffee, Tea, and FNS for all!</p>
+                    <h3>Ownership</h3>
+                    <p>
+                    <ui data-role="listview" data-icon="minus">
+                        <li>Jeff Smith: <b>Owner</b></li>
+                        <li>Joe Smith: <b>Owner</b></li>
+                        <li>Samantha Hansan: <b>Clerk</b></li>
+                    </ui>
+                    <button>Add Owner</button>
+                    </p>
                 </div>
                 <div data-role="collapsible">
-                    <h3>Priti's WonderMart</h3>
-                    <p>Get all of your cooking ingredients here!</p>
+                    <h3>Inventory</h3>
+                    <p>
+                        <ui data-role="listview">
+                            <li>Sales Information</li>
+                            <li>Store Criteria and Type Information</li>
+                            <li>Food Categories:<br/>Breads/Grains: 30%<br/>Dairy: 25%<br/>Fruits/Vegetables: 23%<br/>Meat/Poultry/Fish: 22%</li>
+                        </ui>
+                        <button>Update Inventory Information</button>
+                    </p>
                 </div>
             </div>
         </div>
-        <button id="addNewStoreBtn">Apply Here for a New Store!</button>
+    </div>
+    <div data-role="page" id="documentationPage">
+        <div data-role="panel" id="documentationSidePanel" data-display="overlay">
+            <button data-icon="camera">Open Camera</button>
+            <button data-icon="eye">Upload Picture</button>
+            <button data-icon="cloud">Upload Other Doc</button>
+        </div>
+        <div data-role="header">
+            <h1>Documentation</h1>
+        </div>
+        <ui data-role="listview" data-icon="check">
+            <li><a href="#">Social Security Number Card</a></li>
+            <li><a href="#">Business License</a></li>
+            <li><a href="#">Photo ID</a></li>
+        </ui>
+        <button data-icon="plus">Upload New Document</button>
+    </div>
+    <div data-role="page" id="uploadPage">
+        <div data-role="header">
+            <h1>Upload New Document</h1>
+        </div>
+        <ui data-role="listview" data-icon="check">
+            <li><a href="#">Social Security Number Card</a></li>
+            <li><a href="#">Business License</a></li>
+            <li><a href="#">Photo ID</a></li>
+        </ui>
+        <a href="#documentationSidePanel"><button data-icon="plus">Upload New Document</button></a>
     </div>
 
     <!-- Cordova reference, this is added to your app when it's built. -->
