@@ -12,8 +12,22 @@
         document.addEventListener( 'pause', onPause.bind( this ), false );
         document.addEventListener( 'resume', onResume.bind( this ), false );
         
-        // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
+        document.getElementById("openCameraBtn").onclick = openCamera;
     };
+
+    function openCamera() {
+        navigator.camera.getPicture(onSuccess, onFail, {
+            quality: 50,
+            destinationType: Camera.DestinationType.FILE_URI
+        });
+    };
+
+    function onSuccess() {
+
+    }
+
+    function onFail() {
+    }
 
     function onPause() {
         // TODO: This application has been suspended. Save application state here.
