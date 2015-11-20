@@ -2,13 +2,129 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>RetailerPortalMobileApp</title>
+    <title>Retailer Portal Mobile App</title>
 
     <!-- RetailerPortalMobileApp references -->
     <link href="css/index.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
-    <p>Hello, your application is ready!</p>
+    <div data-role="page" id="index">
+        <div id="mobileWrap">
+            <div id="mobileLogin">
+
+                <img src="https://www.eauth.usda.gov/_GlobalAssets/images/mobile/title.png" alt="USDA eAuthentication">
+
+                <form method="post">
+
+                    <label for="usdaID">User ID</label><br>
+                    <input name="USER" type="text" id="USER" size="31" maxlength="255" validationgroup="login" title="User Name" autocomplete="off" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+                    <span id="reqUser" style="display:none;"></span>
+                    <br>
+                    <label for="usdaPass">Password</label><br>
+                    <input name="PASSWORD" type="password" id="PASSWORD" size="31" maxlength="255" validationgroup="login" title="Password" autocomplete="off" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+                    <span id="reqPass" style="display:none;"></span>
+
+
+                    <p><b>WARNING:</b> By logging into this site, I acknowledge that I have read, understand and agree to the <a href="#termsOfUse" id="termUse" title="View Terms of Use">Terms of Use</a> below.</p>
+
+                    <div id="val" title="Validation Errors" style="font-weight:bold;color:black;display:none;">
+
+                    </div>
+
+                    <a href="#storeListPage"><input type="image" name="ibLogin" id="ibLogin" tabindex="3" title="Login" src="https://www.eauth.usda.gov/_GlobalAssets/Images/btn-login.png" alt="Login" style="border-width: 0px;"></a>
+
+                </form>
+            </div><!-- end mobileLogin-->
+            <div id="mobileTermUse">
+                <a name="termsOfUse"></a>
+                <h2>Warning</h2>
+                <h3>Upon Login You Agree to the Following Information:</h3>
+
+                <p>
+                    You are accessing a U.S. Government information system, which includes (1) this computer,
+                    (2) this computer network, (3) all computers connected to this network, and (4) all devices and
+                    storage media attached to this network or to a computer on this network.  This information
+                    system is provided for U.S. Government-authorized use only.
+                </p>
+                <p>
+                    Unauthorized or improper use of this system may result in disciplinary action, as well as
+                    civil and criminal penalties.
+                </p>
+                <p>By using this information system, you understand and consent to the following:</p>
+
+                <p>
+                    1. You have no reasonable expectation of privacy regarding any communications or data
+                    transiting or stored on this information system.  At any time, the government may
+                    for any lawful government purpose monitor, intercept, search and seize any
+                    communication or data transiting or stored on this information system.
+                </p>
+                <p>
+                    2. Any communications or data transiting or stored on this information system may be
+                    disclosed or used for any lawful government purpose.
+                </p>
+                <p>
+                    3. Your consent is final and irrevocable.  You may not rely on any statements or
+                    informal policies purporting to provide you with any expectation of privacy
+                    regarding communications on this system, whether oral or written, by your
+                    supervisor or any other official, except USDA's Chief Information Officer.
+                </p>
+                <div>
+                    <a href="#top" id="mobileBackLogin">
+                        <img src="https://www.eauth.usda.gov/_GlobalAssets/images/mobile/btn-back.png" alt="Back to Login" title="Back to Login">
+                    </a>
+                </div>
+
+            </div>
+            <!-- end mobileTermUse-->
+        </div>
+    </div>
+    <div data-role="page" id="storeListPage">
+        <div data-role="header">
+            <h1>My Stores</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div data-role="collapsibleset" id="storeList">
+                <div data-role="collapsible">
+                    <h3>Matt's Fresh FOOOOOOOOOD Market</h3>
+                    <p>YUM! YUM!</p>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Jeff's Daily Cafe</h3>
+                    <p>Coffee, Tea, and FNS for all!</p>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Priti's WonderMart</h3>
+                    <p>Get all of your cooking ingredients here!</p>
+                </div>
+            </div>
+        </div>
+        <button id="addNewStoreBtn">Apply Here for a New Store!</button>
+    </div>
+    <div data-role="page" id="storeInfoPage">
+        <div data-role="header">
+            <h1>My Stores</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div data-role="collapsibleset" id="storeList">
+                <div data-role="collapsible">
+                    <h3>Matt's Fresh FOOOOOOOOOD Market</h3>
+                    <p>YUM! YUM!</p>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Jeff's Daily Cafe</h3>
+                    <p>Coffee, Tea, and FNS for all!</p>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Priti's WonderMart</h3>
+                    <p>Get all of your cooking ingredients here!</p>
+                </div>
+            </div>
+        </div>
+        <button id="addNewStoreBtn">Apply Here for a New Store!</button>
+    </div>
 
     <!-- Cordova reference, this is added to your app when it's built. -->
     <script src="cordova.js"></script>
